@@ -1,5 +1,5 @@
-// Stack_basic.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌÐòµÄÈë¿Úµã¡£
-//
+// Stack_basic.cpp : å®šä¹‰æŽ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
+// author: KAI
 
 #include "stdafx.h"
 #include "stdio.h"
@@ -11,8 +11,8 @@
 typedef int Elementtype;
 typedef struct Node
 {
-	Elementtype Element;//Êý¾ÝÓò  
-	struct Node *Next;//Á´Óò  
+	Elementtype Element;//æ•°æ®åŸŸ  
+	struct Node *Next;//é“¾åŸŸ  
 }*Stack,*SNode;
 
 int IsEmpty(Stack S){ return S->Next == NULL; }
@@ -37,7 +37,7 @@ void Push(Elementtype x, Stack S)
 	Tmpcell->Element = x;
 	Tmpcell->Next = S->Next;
 	S->Next = Tmpcell;
-	//Í·²å
+	//å¤´æ’
 }
 void MakeEmpty(Stack S)
 {
@@ -47,10 +47,10 @@ void MakeEmpty(Stack S)
 Stack CreateStack()
 {
 	Stack S;
-	S = (Stack)malloc(sizeof(Node));//³ö¸ö±íÍ·
+	S = (Stack)malloc(sizeof(Node));//å‡ºä¸ªè¡¨å¤´
 	if (S == NULL) printf("Out of Space!");
 	S->Next = NULL;
-	MakeEmpty(S);//Çå¿Õstack
+	MakeEmpty(S);//æ¸…ç©ºstack
 	return S;
 }
 
@@ -65,8 +65,8 @@ Elementtype Top(Stack S)
 }
 void Print(Stack L){
 	SNode P = L->Next;
-	if (IsEmpty(L))   //Á´±íÎª¿Õ
-		printf("PrintList is excuted£¬but it is empty.\n");
+	if (IsEmpty(L))   //é“¾è¡¨ä¸ºç©º
+		printf("PrintList is excutedï¼Œbut it is empty.\n");
 	else
 	{
 		while (P != NULL)
