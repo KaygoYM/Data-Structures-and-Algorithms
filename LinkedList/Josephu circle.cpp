@@ -1,4 +1,4 @@
-// Josephu circle.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌÐòµÄÈë¿Úµã¡£
+// Josephu circle.cpp : 
 //
 #include "stdafx.h"
 #include "stdio.h"
@@ -7,15 +7,15 @@
 
 typedef struct Node
 {
-	int Element;//Êý¾ÝÓò  
-	struct Node *Next;//Á´Óò  
+	int Element;//æ•°æ®åŸŸ  
+	struct Node *Next;//é“¾åŸŸ  
 }*List, *Position;
-//ÓÐ±íÍ·µÄµ¥ÏòÑ­»·Á´±í
+//æœ‰è¡¨å¤´çš„å•å‘å¾ªçŽ¯é“¾è¡¨
 List CreateList(int size)
 {
 	Position p, e = NULL;
 	int i = 1;
-	List L = (List)malloc(sizeof(Node));//ÉêÇëµÚÒ»¸öµÄ¿Õ¼ä
+	List L = (List)malloc(sizeof(Node));//ç”³è¯·ç¬¬ä¸€ä¸ªçš„ç©ºé—´
 	if (L == NULL){
 		printf("Fail to create header.\n");
 		return NULL;
@@ -30,14 +30,14 @@ List CreateList(int size)
 			return NULL;
 		}
 		p->Element=i;
-		//Í·²å
+		//å¤´æ’
 		//p->Next = L->Next;
 		//L->Next = p;
-		//Î²²å
+		//å°¾æ’
 		if (i == 2)
 			L->Next = p;
 		else
-			e->Next = p; //eÊ¼ÖÕÖ¸ÏòÄ©Î²
+			e->Next = p; //eå§‹ç»ˆæŒ‡å‘æœ«å°¾
 		e = p;
 		e->Next = L;
 	}
@@ -57,8 +57,8 @@ int getlength(List L)
 
 void PrintList(List L){
 	Position P = L;
-	if (P == NULL)   //Á´±íÎª¿Õ
-		printf("PrintList is excuted£¬but it is empty.\n");
+	if (P == NULL)   //é“¾è¡¨ä¸ºç©º
+		printf("PrintList is excutedï¼Œbut it is empty.\n");
 	else
 	{
 		do{
@@ -75,13 +75,13 @@ void Josbegin(List J, int rule)
 {
 	Position P = J;
 	int len = getlength(J);
-		for (int i = 1; i <= len; i++) //i¼ÇÂ¼É¾³ýµÄÈËindex
+		for (int i = 1; i <= len; i++) //iè®°å½•åˆ é™¤çš„äººindex
 		{
-			for (int k = 1; k < rule-1; k++)//±¨Êý
+			for (int k = 1; k < rule-1; k++)//æŠ¥æ•°
 			{
 				P = P->Next;
 			}
-			Position Tmp = P->Next;//É¾³ý±¨µ½ruleÕâ¸öÊýµÄÈË
+			Position Tmp = P->Next;//åˆ é™¤æŠ¥åˆ°ruleè¿™ä¸ªæ•°çš„äºº
 			P->Next = Tmp->Next;
 			printf("%d\n", Tmp->Element);
 			free(Tmp);
