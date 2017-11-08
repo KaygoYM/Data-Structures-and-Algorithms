@@ -1,6 +1,6 @@
 // Stack_simple_example.cpp 
 // Binary,Decimal,Hex and Octal Convert
-
+// author:KAI
 #include "stdafx.h"
 #include "stdio.h"
 #include <stdlib.h>
@@ -9,8 +9,8 @@
 typedef int Elementtype;
 typedef struct Node
 {
-	Elementtype Element;//Êı¾İÓò  
-	struct Node *Next;//Á´Óò  
+	Elementtype Element;//æ•°æ®åŸŸ  
+	struct Node *Next;//é“¾åŸŸ  
 }*Stack, *SNode;
 void Pop(Stack S)
 {
@@ -36,15 +36,15 @@ void Push(Elementtype x, Stack S)
 	Tmpcell->Element = x;
 	Tmpcell->Next = S->Next;
 	S->Next = Tmpcell;
-	//Í·²å
+	//å¤´æ’
 }
 Stack CreateStack()
 {
 	Stack S;
-	S = (Stack)malloc(sizeof(Node));//³ö¸ö±íÍ·
+	S = (Stack)malloc(sizeof(Node));//å‡ºä¸ªè¡¨å¤´
 	if (S == NULL) printf("Out of Space!");
 	S->Next = NULL;
-	//MakeEmpty(S);//Çå¿Õstack
+	//MakeEmpty(S);//æ¸…ç©ºstack
 	return S;
 }
 
@@ -55,11 +55,11 @@ void Convert(int num, int sys)
 	while (num >= sys)
 	{
 		int reminder = num % sys;
-		num = num / sys;//quotient ÉÌ(Õû³ı)
+		num = num / sys;//quotient å•†(æ•´é™¤)
 		Push(reminder, S);
 		len++;
 	}
-	Push(num, S);//×îºóÓàÊıÑ¹Èë
+	Push(num, S);//æœ€åä½™æ•°å‹å…¥
 	for (int i = 1; i <= len+1; i++)//len+1
 		Pop(S);
 }
