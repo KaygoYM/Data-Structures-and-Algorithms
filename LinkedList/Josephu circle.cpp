@@ -1,5 +1,5 @@
 // Josephu circle.cpp : 
-//
+// author:KAI
 #include "stdafx.h"
 #include "stdio.h"
 #include <stdlib.h>
