@@ -1,5 +1,5 @@
-// Linkedlist.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
-//
+// Linkedlist.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
+// author:KAI
 
 #include "stdafx.h"
 #include "stdio.h"
@@ -8,22 +8,22 @@
 #include <malloc.h> 
 
 typedef int Elementtype;
-//typedef struct Node *PtrToNode;//¶¨Òå½ÚµãÖ¸Õë 
+//typedef struct Node *PtrToNode;//å®šä¹‰èŠ‚ç‚¹æŒ‡é’ˆ 
 typedef struct Node
 {
-	Elementtype Element;//Êı¾İÓò  
-	struct Node *Next;//Á´Óò  
+	Elementtype Element;//æ•°æ®åŸŸ  
+	struct Node *Next;//é“¾åŸŸ  
 }*List,*Position;
 
-//½ÚµãµÄ¶¨Òå  
-//typedef PtrToNode Position;//½Úµã
-//typedef PtrToNode List;//±íÍ·
+//èŠ‚ç‚¹çš„å®šä¹‰  
+//typedef PtrToNode Position;//èŠ‚ç‚¹
+//typedef PtrToNode List;//è¡¨å¤´
 
 List CreateList(int size)
 {
 	Position p,e = NULL;
 	int i;
-	List L= (List)malloc(sizeof(Node));//ÉêÇë±íÍ·(=±í)µÄ¿Õ¼ä
+	List L= (List)malloc(sizeof(Node));//ç”³è¯·è¡¨å¤´(=è¡¨)çš„ç©ºé—´
 	if (L == NULL){
 		printf("Fail to create header.\n");
 		return NULL;
@@ -38,14 +38,14 @@ List CreateList(int size)
 		}
 		printf("Please input the element(int) in the list!\n");
 		scanf_s("%d", &(p->Element), 5);
-		//Í·²å
+		//å¤´æ’
 		//p->Next = L->Next;
 		//L->Next = p;
-		//Î²²å
+		//å°¾æ’
 		if (i == 1)
 			L->Next = p;
 		else
-			e->Next = p; //eÊ¼ÖÕÖ¸ÏòÄ©Î²
+			e->Next = p; //eå§‹ç»ˆæŒ‡å‘æœ«å°¾
 		e = p;
 		e->Next = NULL;
 	}
@@ -57,7 +57,7 @@ int DeleteList(List L)//make empty
 {
 	Position P,Q;
 	P = L->Next;
-	L->Next = NULL;//ÁôÏÂ±íÍ·
+	L->Next = NULL;//ç•™ä¸‹è¡¨å¤´
 
 	while (P != NULL)
 	{
@@ -71,8 +71,8 @@ int DeleteList(List L)//make empty
 
 void PrintList(List L){
 	Position P = L->Next;
-	if (P==NULL)   //Á´±íÎª¿Õ
-		printf("PrintList is excuted£¬but it is empty.\n");
+	if (P==NULL)   //é“¾è¡¨ä¸ºç©º
+		printf("PrintList is excutedï¼Œbut it is empty.\n");
 	else
 	{	
 		while (P!=NULL)
@@ -156,12 +156,12 @@ void Delete(Elementtype x, List L)
 
 void main(){
 
-	List Test_List = NULL;//±íÍ·
+	List Test_List = NULL;//è¡¨å¤´
 	int size = 5;
 	bool flag = true;
 	Elementtype num,num2;
 	char s;
-	Test_List=CreateList(size);       //Á´±í³õÊ¼»¯
+	Test_List=CreateList(size);       //é“¾è¡¨åˆå§‹åŒ–
 	PrintList(Test_List);
 	while (flag){
 		printf("choose function:\n");
