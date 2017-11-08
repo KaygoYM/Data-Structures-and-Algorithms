@@ -1,4 +1,5 @@
 // Stack_brackets_match.cpp : 
+// author:KAI
 #include "stdafx.h"
 #include "stdio.h"
 #include <stdlib.h>
@@ -8,8 +9,8 @@
 typedef char Elementtype;
 typedef struct Node
 {
-	Elementtype Element;//Êı¾İÓò  
-	struct Node *Next;//Á´Óò  
+	Elementtype Element;//æ•°æ®åŸŸ  
+	struct Node *Next;//é“¾åŸŸ  
 }*Stack, *SNode;
 
 Elementtype Pop(Stack S)
@@ -31,12 +32,12 @@ void Push(Elementtype x, Stack S)
 	Tmpcell->Element = x;
 	Tmpcell->Next = S->Next;
 	S->Next = Tmpcell;
-	//Í·²å
+	//å¤´æ’
 }
 Stack CreateStack()
 {
 	Stack S;
-	S = (Stack)malloc(sizeof(Node));//³ö¸ö±íÍ·
+	S = (Stack)malloc(sizeof(Node));//å‡ºä¸ªè¡¨å¤´
 	if (S == NULL) printf("Out of Space!");
 	S->Next = NULL;
 	return S;
@@ -69,7 +70,7 @@ int Check(char str[])
 		default:continue;
 		}
 	}
-	return 1;//Ê²Ã´À¨ºÅ¶¼Ã»ÓĞ±í´ïÊ½Ò²ÊÇ¶ÔµÄ
+	return 1;//ä»€ä¹ˆæ‹¬å·éƒ½æ²¡æœ‰è¡¨è¾¾å¼ä¹Ÿæ˜¯å¯¹çš„
 
 }
 void main()
