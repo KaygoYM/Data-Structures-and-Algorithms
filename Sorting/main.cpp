@@ -14,7 +14,7 @@ void print_s(Elementtype A[], int N,char a[])
 
 void main()
 {
-	const long int N = 1000;
+	const long int N = 100000;
 	int Test_array[N];
 	time_t start, end;
 	for (int test = 1; test <= 7; test++){
@@ -32,7 +32,7 @@ void main()
 			case 1:
 			{
 					  time(&start);
-					  Bubble_sort(Test_array, N);//Ã°ÅÝÅÅÐò
+					  Bubble_sort(Test_array, N);//å†’æ³¡
 					  time(&end);
 					  print_s(Test_array, N, "Bubble");
 					  printf("Bubble time= %lf s\n", difftime(end, start));
@@ -41,7 +41,7 @@ void main()
 			case 2:
 			{
 					  time(&start);
-					  Insert_sort(Test_array, N);//²åÈëÅÅÐò
+					  Insert_sort(Test_array, N);//æ’å…¥
 					  time(&end);
 					  print_s(Test_array, N, "Insert");
 					  printf("Insert time= %lf s\n", difftime(end, start));
@@ -50,7 +50,7 @@ void main()
 			case 3:
 			{
 					  time(&start);
-					  Shell_sort(Test_array, N);//Ï£¶ûÅÅÐò
+					  Shell_sort(Test_array, N);//å¸Œå°”
 					  time(&end);
 					  print_s(Test_array, N, "Shell");
 					  printf("Shell time= %lf s\n", difftime(end, start));
@@ -59,7 +59,7 @@ void main()
 			case 4:
 			{
 					  time(&start);
-					  Heap_sort(Test_array, N);//¶ÑÅÅÐò
+					  Heap_sort(Test_array, N);//å †
 					  time(&end);
 					  print_s(Test_array, N, "Heap");
 					  printf("Heap time= %lf s\n", difftime(end, start));
@@ -68,7 +68,7 @@ void main()
 			case 5:
 			{
 					  time(&start);
-					  Merge_sort(Test_array, N);//¹é²¢ÅÅÐò
+					  Merge_sort(Test_array, N);//å½’å¹¶
 					  time(&end);
 					  //print_s(Test_array, N, "Merge");
 					  printf("Merge time= %lf s\n", difftime(end, start));
@@ -77,7 +77,7 @@ void main()
 			case 6:
 			{
 					  time(&start);
-					  Quick_sort(Test_array,0,N-1);//¿ìËÙÅÅÐò
+					  Quick_sort(Test_array,0,N-1);//å¿«é€Ÿ
 					  time(&end);
 					  print_s(Test_array, N, "Quick");
 					  printf("Quick time= %lf s\n", difftime(end, start));
@@ -86,7 +86,7 @@ void main()
 			case 7:
 			{
 					  time(&start);
-					  Bucket_sort(Test_array, N);//Í°ÅÅÐò
+					  Bucket_sort(Test_array, N);//æ¡¶å¼
 					  time(&end);
 					  print_s(Test_array, N, "Bucket");
 					  printf("Bucket time= %lf s\n", difftime(end, start));
